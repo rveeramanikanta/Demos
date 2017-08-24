@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hash</title>
+<link rel="stylesheet" href="css/introjs.css">
+
+<script type="text/javascript" src="js/jquery-latest.js"></script>
+<script type="text/javascript" src="js/intro.js"></script>
+
+<script type="text/javascript">
+
+	var json = [ {
+		element : "#abc1",
+		intro : "text1",
+		position : "right"
+	}, {
+		element : "#abc2",
+		intro : "text2",
+		position : "bottom"
+	}]
+	$(document).ready(function() {
+		initIntro();
+	});
+
+	function initIntro() {
+		intro = introJs();
+		intro.setOptions({
+			showStepNumbers : false,
+			exitOnOverlayClick : false,
+			showBullets : false,
+			exitOnEsc : false,
+			keyboardNavigation : false,
+			steps : json
+		});
+		intro.start();
+	}
+</script>
+
+
+</head>
+<body>
+
+
+	<span id='abc1'> abc1 </span>
+	<br />
+	<span id='abc2'> abc2 </span>
+	<br />
+</body>
+</html>

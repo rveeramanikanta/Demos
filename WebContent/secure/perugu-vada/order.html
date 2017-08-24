@@ -1,0 +1,75 @@
+<div class='col-xs-offset-4 col-xs-4'>
+	<div class='panel panel-primary'>
+		<div class='panel-heading text-center'>Order Details</div>
+		<div class='panel-body'>
+			<form name="userForm">
+				<div class="form-group"
+					ng-class="{ 'has-error' : userForm.name.$invalid && !userForm.name.$pristine }">
+					<label>Name<sup>*</sup> :
+					</label> <input type="text" name="name" class="form-control"
+						ng-model="user.name" required>
+					<p ng-show="userForm.name.$invalid && !userForm.name.$pristine"
+						class="help-block">name is required.</p>
+				</div>
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : userForm.orders_number.$invalid && !userForm.orders_number.$pristine }">
+					<label>No of orders<sup>*</sup> :
+					</label> <input type="number" name="orders_number" class="form-control"
+						ng-model="user.orders_number" required>
+					<p
+						ng-show="userForm.orders_number.$invalid && !userForm.orders_number.$pristine"
+						class="help-block">minimum one order is required.</p>
+				</div>
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : userForm.mobile_number.$invalid && !userForm.mobile_number.$pristine }">
+					<label>Mobile Number<sup>*</sup> :
+					</label> <input type="number" name="mobile_number" class="form-control"
+						ng-model="user.mobile_number" ng-pattern="/^[7-9][0-9]{9}$/"
+						required>
+					<p
+						ng-show="userForm.mobile_number.$invalid && !userForm.mobile_number.$pristine"
+						class="help-block">Please enter valid number!.</p>
+				</div>
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : userForm.date.$invalid && !userForm.date.$pristine }">
+					<label>Delivery Date<sup>*</sup> :
+					</label> <input id="deliveryDate" type="text" name="date"
+						class="form-control" ng-value="date | date" required>
+					<p ng-show="userForm.date.$invalid && !userForm.date.$pristine"
+						class="help-block">Please provide a valid date!.</p>
+				</div>
+
+
+				<div class="form-group"
+					ng-class="{ 'has-error' : userForm.address.$invalid && !userForm.address.$pristine }">
+					<label>Address<sup>*</sup> :
+					</label> <input type="text" name="address" class="form-control"
+						ng-model="user.address"
+						required>
+					<p
+						ng-show="userForm.address.$invalid && !userForm.address.$pristine"
+						class="help-block">Please provide address to be delivered!.</p>
+				</div>
+
+
+				<div class="form-group">
+					<div class="pull-right">
+						<span class="btn btn-sm btn-warning">Cancel</span>&emsp; <span
+							class="btn btn-sm btn-warning"
+							ng-disabled="(userForm.name.$invalid && !userForm.name.$ng-untouched) || (userForm.orders_number.$invalid && !userForm.orders_number.$ng-untouched) 
+						|| (userForm.mobile_number.$invalid && !userForm.mobile_number.$ng-untouched)">Order</span>
+					</div>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+<script>
+	$("#deliveryDate").datepicker();
+</script>

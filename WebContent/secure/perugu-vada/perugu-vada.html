@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Perugu-vada</title>
+<link rel="stylesheet" href="/css/bootstrap.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/perugu-vada-custom-css.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+
+<script type="text/javascript" src="/js/jquery-latest.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
+<script type="text/javascript" src="/js/jquery-ui-all.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
+<script type="text/javascript" src="app.js"></script>
+
+</head>
+<body ng-app="myApp">
+	<nav class="navbar navbar-fixed-top1 nav-bar-bg-color">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed"
+					data-toggle="collapse" data-target="#navbar" aria-expanded="false"
+					aria-controls="navbar">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">logo</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="#">name</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#/"> Home&nbsp;<i class="fa fa-home"
+						aria-hidden="true"></i></li></a>
+					<li><a href="#/contactus">Contact Us&nbsp;<i
+							class="fa fa-phone" aria-hidden="true"></i></a></li>
+					<li><a href="../navbar-static-top/">Customer Feedback&nbsp;<i
+							class="fa fa-pencil-square-o" aria-hidden="true"></i></a></li>
+					<li><a href="#/order" class='order-now'
+						data-toggle="modal" data-target="#myModal">Order now</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<div ng-view></div>
+</body>
+</html>

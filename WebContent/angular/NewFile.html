@@ -1,0 +1,23 @@
+
+<html>
+<head>
+<title>Angular JS Includes</title>
+
+</head>
+<body>
+	<h2>AngularJS Sample Application</h2>
+	<div ng-app="" ng-controller="studentController">{{ data }}</div>
+	<script>
+		function studentController($scope, $http) {
+			var url = "app.js";
+			$http.get(url).then(function(response) {
+				$scope.data = response.data;
+			});
+		}
+	</script>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
+
+</body>
+</html>
