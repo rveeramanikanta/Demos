@@ -1,0 +1,85 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<script src="/js/jquery-latest.js"></script>
+<script src="/js/bootstrap.js"></script>
+<script src="/js/gs/TweenMax.min.js"></script>
+<script src="/js/jquery-ui-all.js"></script>
+<script src="/js/typewriting.min.js"></script>
+<script src='/js/intro.js'></script>
+
+<link rel="stylesheet" href="/css/introjs.css">
+<link rel="stylesheet" href="/css/introjs-ct.css">
+<link rel="stylesheet" href="/css/jquery-ui.css">
+<link rel="stylesheet" href="/css/animate.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css">
+<title>Insert title here</title>
+
+<style type="text/css">
+/* .path {
+	stroke-dasharray: 1000;
+	stroke-dashoffset: 1000;
+	animation: dash 5s linear alternate 1;
+}
+
+@keyframes dash {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+} */
+</style>
+
+<script type="text/javascript">
+	/* $("document").ready(function() {
+	 $(".path").one("animationend", function() {
+	 $(".path").css({"stroke-dasharray" : "0"});
+	 });
+	 }); */
+</script>
+</head>
+<body>
+	<div class="col-xs-12">
+		<div class="col-xs-6 col-xs-offset-3" style="margin-top: 5%; height: 500px;" >
+			<div style="height: 100%;">
+				<img alt="" src="/images/thread-red.png" width="10%" style="position: relative; top: 50%;">
+			</div>
+			<svg style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+				<line x1="23" y1="248" x2="651" y2="244"
+						style="stroke-width: 2; stroke: red;" />
+				<line x1="22" y1="19" x2="22" y2="489"
+						style="stroke-width: 2; stroke: red;" />		
+				<path id='motionPath' class='path'
+						d="M 26 248 q 83 -173 155 0 q 83 173 155 0 q 83 -173 155 0 q 83 173 155 0"
+						stroke="blue" stroke-width="5" fill="none" />
+				
+				<circle id="circle" r="10" cx="0" cy="0" fill="tomato" />
+				<animateMotion id='animateMotion' xlink:href="" dur="5s" begin="0s"
+						fill="freeze" repeatCount="indefinite">
+	    			<mpath xlink:href="#motionPath" />
+				</animateMotion>
+			</svg>
+		</div>
+	</div>
+	<script type="text/javascript">
+		var testing = function() {
+			/* var aMotion = document.createElementNS('http://www.w3.org/2000/svg', 'animateMotion');
+			aMotion.setAttribute('id', 'myMotion');
+			aMotion.setAttribute('xlink:href', '#circle');
+			aMotion.setAttribute('dur', "5s");
+			aMotion.setAttribute('begin', "0s");
+			aMotion.setAttribute('fill', 'freeze');
+			aMotion.setAttribute('repeatCount', "indefinite");
+			$('svg').append(aMotion);
+			
+			var mpath = document.createElementNS('http://www.w3.org/2000/svg', 'mpath');
+			mpath.setAttribute('xlink:href', '#motionPath');
+			$("#myMotion").append(mpath) */
+		}
+	</script>
+
+</body>
+</html>
