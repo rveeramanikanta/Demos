@@ -28,7 +28,9 @@
    */
   function IntroJs(obj) {
     this._targetElement = obj;
-
+    this._introInnerHTMLContentArr = [];
+    this._previousState;
+    
     this._options = {
     	      /* Next button label in tooltip box */
     	      nextLabel: 'Next &rarr;',
@@ -78,8 +80,11 @@
    * @returns {Boolean} Success or not?
    */
   function _introForElement(targetElm) {
+	//console.log(targetElm.innerHTML);
     var introItems = [],
         self = this;
+    
+    //this._introInnerHTMLContentArr[0] = this._targetElement.innerHTML;
 
     if (this._options.steps) {
       //use steps passed programmatically
@@ -253,6 +258,8 @@
         document.attachEvent('onresize', self._onResize);
       }
     }
+    
+    //console.log(targetElm.innerHTML);
     return false;
   }
 
@@ -262,6 +269,8 @@
    * @method _cloneObject
   */
   function _cloneObject(object) {
+	  //console.log("_cloneObject");
+	  //console.log(object);
       if (object == null || typeof (object) != 'object' || typeof (object.nodeType) != 'undefined') {
         return object;
       }
@@ -296,14 +305,21 @@
    * @method _nextStep
    */
   function _nextStep() {
+	  
     this._direction = 'forward';
-
+    //console.log(this._targetElement.innerHTML = "hai")
+    //console.log(this._targetElement.innerHTML);
     if (typeof (this._currentStep) === 'undefined') {
       this._currentStep = 0;
     } else {
       ++this._currentStep;
     }
-
+    
+    this._previousState = this._introItems[this._currentStep]["element"].innerHTML;
+    /*console.log(this._introItems[this._currentStep]["element"].innerHTML);*/
+    //this._previousState = 
+    //this._introInnerHTMLContentArr[this._currentStep] = this._targetElement.innerHTML;
+    
     if ((this._introItems.length) <= this._currentStep) {
       //end of the intro
       //check if any callback is defined
@@ -320,6 +336,7 @@
     }
 
     _showElement.call(this, nextStep);
+    this._introInnerHTMLContentArr[this._currentStep] = this._targetElement.innerHTML;
   }
 
   /**
@@ -334,12 +351,15 @@
     if (this._currentStep === 0) {
       return false;
     }
-
+    
+    //$(this._introItems[this._currentStep]["element"]).html(this._previousState);
+    //this._introItems[this._currentStep]["element"] = this._previousState;
+    //this._targetElement.previousState = this._introInnerHTMLContentArr[this._currentStep - 1];
     var nextStep = this._introItems[--this._currentStep];
+    
     if (typeof (this._introBeforeChangeCallback) !== 'undefined') {
       this._introBeforeChangeCallback.call(this, nextStep.element);
     }
-
     _showElement.call(this, nextStep);
   }
 
@@ -358,6 +378,8 @@
     if (overlayLayer == null) {
       return;
     }
+    
+    //console.log("_exitIntro js")
 
     //for fade-out animation
     overlayLayer.style.opacity = 0;
@@ -1021,6 +1043,8 @@
     if (typeof (this._introAfterChangeCallback) !== 'undefined') {
       this._introAfterChangeCallback.call(this, targetElement.element);
     }
+    
+    //console.log(this._targetElement.innerHTML);
   }
 
   /**
